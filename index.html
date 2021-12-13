@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Music Player</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./assets/fonts/fontawesome-free-5.15.4-web/css/all.min.css">
+        <link rel="stylesheet" href="./assets/css/style.css">
+    </head>
+
+    <body>
+        <div class="main">
+            <div class="player">
+                <!-- Dash board -->
+                <div class="dashboard">
+                    <header class="dashboard__header">
+                        <h4 class="dashboard__status">Now playing:</h4>
+                        <h2 class="dashboard__title">String 57th & 9th</h2>
+                    </header>
+
+                    <div class="dashboard__cd">
+                        <div class="dashboard__cd-thumb"></div>
+                    </div>
+
+                    <div class="dashboard__control">
+                        <div class="control__btns">
+                            <div class="btn btn-repeat">
+                                <i class="fas fa-redo"></i>
+                            </div>
+                            <div class="btn btn-prev">
+                                <i class="fas fa-step-backward"></i>
+                            </div>
+                            <div class="btn-play">
+                                <i class="fas fa-play btn-pause"></i>
+                                <i class="fas fa-pause btn-playing"></i>
+                            </div>
+                            <div class="btn btn-next">
+                                <i class="fas fa-step-forward"></i>
+                            </div>
+                            <div class="btn btn-random">
+                                <i class="fas fa-random"></i>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <div class="control__progress">
+                        <input type="range" name="progress" id="progress" class="progress" value="0" min="0" step="any" max="100">
+                    </div>
+
+                    <audio src="" id="audio"></audio>
+                </div>
+
+                <!-- Playlist -->
+                <div class="playlist">
+                    
+                </div>
+            </div>
+        </div>
+
+        <script src="./app.js"></script>
+    </body>
+</html>

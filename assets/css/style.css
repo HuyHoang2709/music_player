@@ -1,0 +1,242 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --black-color: #000;
+    --white-color: #fff;
+    --primary-color: #ec1f55;
+    --text-color: #333;
+}
+
+html {
+    font-family: 'Poppins', sans-serif;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+}
+
+.player {
+    width: 100%;
+    max-width: 480px;
+}
+
+/* Dashboard CSS */
+.dashboard {
+    padding: 24px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+    border: 1px solid #ebebeb;
+    border-top: none;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    position: fixed;
+    top: 0;
+    background-color: var(--white-color);
+    z-index: 2;
+}
+
+.dashboard__header {
+    text-align: center;
+}
+
+.dashboard__status {
+    color: var(--primary-color);
+    font-size: 12px;
+    font-weight: 550;
+    margin-bottom: 6px;
+}
+
+.dashboard__title {
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.dashboard__cd {
+    width: 200px;
+    display: flex;
+    margin: auto;
+}
+
+.dashboard__cd-thumb {
+    width: 100%;
+    padding-top: 100%;
+    margin: auto;
+    background-size: cover;
+    border-radius: 50%;
+}
+ 
+.dashboard__control {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.control__btns {
+    display: flex;
+    padding: 16px;
+    justify-content: space-around;
+    align-items: center;
+    /* margin-bottom: 6px; */
+}
+
+.btn {
+    font-size: 20px;
+    opacity: 0.6;
+    cursor: pointer;
+    transition: opacity 0.2s ease-out;
+}
+
+.btn:hover, .btn-play:hover {
+    opacity: 1;
+    transform: scale(1.02);
+}
+
+.btn.active {
+    opacity: 1;
+    color: var(--primary-color);
+}
+
+.btn-play {
+    width: 20px;
+    height: 20px;
+    padding: 28px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    font-size: 26px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white-color);
+    cursor: pointer;
+    opacity: 0.9;
+    transition: all 0.2s ease-out;
+    box-shadow: 0 0 7px rgba(236, 31, 90);
+}
+
+.btn-play .btn-pause {
+    position: relative;
+    left: 2px;
+}
+
+.playing .btn-pause, .btn-playing {
+    display: none;
+}
+
+.playing .btn-playing {
+    display: block;
+}
+
+.control__progress {
+    width: 100%;
+    padding: 6px;
+}
+
+.progress {
+    width: 100%;
+    -webkit-appearance: none;
+    background: #d3d3d3;
+    border-radius: 30px;
+}
+
+.progress::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: 1px solid #ccc;
+    padding: 4px;
+    border-radius: 30px;
+    width: 16px;
+    height: 6px;
+    background: var(--primary-color);
+    border-left: 1px solid var(--white-color);
+}
+
+.progress:focus {
+    outline: none;
+}
+
+.progress::-webkit-slider-runnable-track {
+    width: 20px;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+}
+
+/* Playlist CSS */
+.playlist {
+    margin-top: 448px;
+    padding: 20px 16px;
+    overflow-y: auto;
+    background-color: rgba(235, 235, 235, 0.5);
+}
+
+.song {
+    padding: 8px 16px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ebebeb;
+    height: 78px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    background-color: var(--white-color);
+    transition: transform 0.2s ease;
+}
+
+.song.active {
+    background-color: var(--primary-color);
+}
+
+.song:hover {
+    transform: scale(1.02);
+}
+
+.song__cd {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-left: 4px;
+}
+
+.song__description {
+    margin-left: 20px;
+    flex: 1;
+}
+
+.song__name {
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.song__singer-name {
+    font-weight: 400;
+    font-size: 12px;
+    color: #999;
+}
+
+.song__option {
+    width: 32px;
+    text-align: right;
+    color: #888;
+    cursor: pointer;
+}
+
+.song.active .song__name,
+.song.active .song__option,
+.song.active .song__singer-name {
+    color: var(--white-color);
+}
